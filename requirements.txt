@@ -66,3 +66,5 @@ huggingsound~=0.1.6
 pydub~=0.25.1
 python-telegram-bot==20.4
 openai-whisper==20230314
+ffmpeg==1.4
+ffmpeg-python==0.2.0
