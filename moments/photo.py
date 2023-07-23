@@ -3,6 +3,8 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, Audio
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, filters, MessageHandler, CallbackQueryHandler
 
+from moments.menu import get_menu
+
 
 @actions.send_upload_photo_action
 async def send_selfi_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
