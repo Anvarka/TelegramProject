@@ -1,5 +1,5 @@
-SCHOOL_PHOTO = "https://s1.stc.all.kpcdn.net/woman/wp-content/uploads/2022/01/kittens-555822_1920-960x540.jpg"
-SELF_PHOTO = "https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*"
+#SCHOOL_PHOTO = "https://s1.stc.all.kpcdn.net/woman/wp-content/uploads/2022/01/kittens-555822_1920-960x540.jpg"
+#SELF_PHOTO = "https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*"
 
 WELCOME_MESSAGE = """
 Привет!
@@ -39,3 +39,6 @@ HOBBY_TEXT = """
 создать новые интересные вещи и саморазвиваться. Люблю вечером посидеть, посмотреть курсы, чтобы узнать что-то новое.
 Также мне нравиться заниматься спортом. Каждые два-три дня я стараюсь посещать спортзал, хожу на скалодром, зимой на лыжи.
 """
+
+SELF_PHOTO = "https://disk.yandex.ru/i/58K8YbNs997O6A"
+SCHOOL_PHOTO = "https://disk.yandex.ru/i/TOyjQ66U8dKDxA"

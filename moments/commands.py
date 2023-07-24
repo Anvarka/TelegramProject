@@ -25,7 +25,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 @actions.send_upload_photo_action
 async def send_selfi_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_photo(chat_id=update.effective_chat.id,
-                                 photo="https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg?crop=0.88847xw:1xh;center,top&resize=1200:*")
+                                 photo=SELF_PHOTO)
     await update.message.reply_text(text="Моя самая удачная фотография",
                                     reply_markup=get_menu())
 
@@ -34,7 +34,7 @@ async def send_selfi_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 @actions.send_upload_photo_action
 async def send_school_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_photo(chat_id=update.effective_chat.id,
-                                 photo="https://s1.stc.all.kpcdn.net/woman/wp-content/uploads/2022/01/kittens-555822_1920-960x540.jpg")
+                                 photo=SCHOOL_PHOTO)
     await update.message.reply_text(text="Со своими братьями. Я слева",
                                     reply_markup=get_menu())
 
@@ -42,7 +42,7 @@ async def send_school_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # /hobby
 @actions.send_upload_audio_action
 async def hobby_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(text="Пожалуйста, подождите...")
+    await update.message.reply_text(text="Пожалуйста, подождите, идет генерация войса...")
     tts = gTTS(text=HOBBY_TEXT, lang='ru', slow=False)
     audio_file = f'audio_{update.message.message_id}.mp3'
     tts.save(audio_file)

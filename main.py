@@ -10,12 +10,10 @@ from moments.commands import start, send_selfi_photo, send_school_photo, help_co
 # import whisper
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 
-
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-
 
 # model = whisper.load_model("base")
 TOKEN = "6294073236:AAEje8f1ZzzpeejDYbCbQ5rMioPOtDQfgwU"
@@ -38,8 +36,10 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Recognize speech from the downloaded voice message
     # transcriptions = model.transcribe(f'voice_{file_id}.wav')
-    transcriptions = "Красавчик"
-    await update.message.reply_text(f"Recognized text: {transcriptions['text']}")
+    transcriptions = "Это урезанная версия для AWS. " \
+                     "В полной версии применялась модель whisper для распознавания текста" \
+                     "см. через /code"
+    await update.message.reply_text(f"Recognized text: {transcriptions}")
 
 
 async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -47,6 +47,7 @@ async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                    text="Sorry, I didn't understand that command.")
 
 
+@actions.send_upload_audio_action
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Parses the CallbackQuery and updates the message text."""
     query = update.callback_query
@@ -55,13 +56,13 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     if query.data == "sql":
         await context.bot.send_voice(chat_id=update.effective_chat.id,
-                                      voice="audio_388.mp3")
+                                     voice="data/sql.ogg")
     elif query.data == "gpt":
         await context.bot.send_voice(chat_id=update.effective_chat.id,
-                                     voice="audio_388.mp3")
+                                     voice="data/gpt.ogg")
     elif query.data == "love":
         await context.bot.send_voice(chat_id=update.effective_chat.id,
-                                     voice="audio_388.mp3")
+                                     voice="data/love.ogg")
 
 
 async def process_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
