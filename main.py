@@ -7,7 +7,7 @@ import os
 from pydub import AudioSegment
 from moments.commands import start, send_selfi_photo, send_school_photo, help_command, hobby_audio, send_github, \
     some_text
-import whisper
+# import whisper
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 
 
@@ -17,7 +17,7 @@ logging.basicConfig(
 )
 
 
-model = whisper.load_model("base")
+# model = whisper.load_model("base")
 TOKEN = "6294073236:AAEje8f1ZzzpeejDYbCbQ5rMioPOtDQfgwU"
 
 
@@ -37,7 +37,8 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     audio.export(f'voice_{file_id}.wav', format='wav')
 
     # Recognize speech from the downloaded voice message
-    transcriptions = model.transcribe(f'voice_{file_id}.wav')
+    # transcriptions = model.transcribe(f'voice_{file_id}.wav')
+    transcriptions = "Красавчик"
     await update.message.reply_text(f"Recognized text: {transcriptions['text']}")
 
 
