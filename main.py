@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 
 # model = whisper.load_model("base")
-TOKEN = "6294073236:AAEje8f1ZzzpeejDYbCbQ5rMioPOtDQfgwU"
+TOKEN = "TOKEN"
 
 
 def error(update, context):
