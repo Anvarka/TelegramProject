@@ -2,8 +2,7 @@ FROM python:3.8-slim AS bot
 
 
 RUN apt-get update
-RUN apt-get install -y python3 python3-pip
-RUN apt-get install ffmpeg
+RUN apt-get install -y python3 python3-pip ffmpeg
 
 RUN mkdir -p /codebase /storage
 ADD . /codebase
