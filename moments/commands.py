@@ -26,7 +26,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 async def send_selfi_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_photo(chat_id=update.effective_chat.id,
                                  photo=SELF_PHOTO)
-    await update.message.reply_text(text="Моя самая удачная фотография",
+    await update.message.reply_text(text="Мое селфи(не люблю фоткать сам себя)",
                                     reply_markup=get_menu())
 
 
@@ -35,7 +35,7 @@ async def send_selfi_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def send_school_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_photo(chat_id=update.effective_chat.id,
                                  photo=SCHOOL_PHOTO)
-    await update.message.reply_text(text="Со своими братьями. Я слева",
+    await update.message.reply_text(text="На школьной экскурсии",
                                     reply_markup=get_menu())
 
 
