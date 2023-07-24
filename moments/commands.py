@@ -46,7 +46,7 @@ async def hobby_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     tts = gTTS(text=HOBBY_TEXT, lang='ru', slow=False)
     audio_file = f'audio_{update.message.message_id}.mp3'
     tts.save(audio_file)
-    await update.message.reply_voice(open(audio_file, 'rb'))
+    await update.message.reply_voice(open(audio_file, 'rb'), reply_markup=get_menu())
 
 
 async def some_text(update: Update, context: ContextTypes.DEFAULT_TYPE):

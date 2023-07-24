@@ -10,6 +10,8 @@ from moments.commands import start, send_selfi_photo, send_school_photo, help_co
 # import whisper
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 
+from moments.menu import get_menu
+
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
@@ -56,13 +58,16 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     if query.data == "sql":
         await context.bot.send_voice(chat_id=update.effective_chat.id,
-                                     voice="data/sql.ogg")
+                                     voice="data/sql.ogg",
+                                     reply_markup=get_menu())
     elif query.data == "gpt":
         await context.bot.send_voice(chat_id=update.effective_chat.id,
-                                     voice="data/gpt.ogg")
+                                     voice="data/gpt.ogg",
+                                     reply_markup=get_menu())
     elif query.data == "love":
         await context.bot.send_voice(chat_id=update.effective_chat.id,
-                                     voice="data/love.ogg")
+                                     voice="data/love.ogg",
+                                     reply_markup=get_menu())
 
 
 async def process_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
